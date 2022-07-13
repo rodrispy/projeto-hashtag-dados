@@ -48,7 +48,7 @@
 
 <h2>Passo a passo do projeto</h2>
 <ol>
-	<li><a href="https://github.com/rodrishud/projeto-hashtag-dados/edit/main/README.md#%EF%B8%8F-contexto">Explicação do problema e do objetivo;</a> ✅</li>
+	<li><a href="https://github.com/rodrishud/projeto-hashtag-dados#%EF%B8%8F-contexto">Explicação do problema e do objetivo;</a> ✅</li>
 	<li>Importação bibliotecas e bases de dados; ✅</li>
 	<li>Identificação colunas que podem ser excluídas; ⬅️</li>
 	<li>Tratamento de valores faltantes;</li>
