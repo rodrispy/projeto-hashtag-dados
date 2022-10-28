@@ -50,12 +50,12 @@
 <ol>
 	<li><a href="https://github.com/rodrishud/projeto-hashtag-dados#%EF%B8%8F-contexto">Explicação do problema e do objetivo;</a> ✅</li>
 	<li>Importação bibliotecas e bases de dados; ✅</li>
-	<li>Identificação colunas que podem ser excluídas; ⬅️</li>
-	<li>Tratamento de valores faltantes;</li>
-	<li>Verificação tipos de dados em cada coluna;</li>
-	<li>Análise exploratória e tratamento de outliers:
+	<li>Identificação colunas que podem ser excluídas; ✅</li>
+	<li>Tratamento de valores faltantes; ✅</li>
+	<li>Verificação tipos de dados em cada coluna; ✅</li>
+	<li>Análise exploratória e tratamento de outliers: ⬅️
 		<ul>
-			<li>Dados numéricos contínuos e discretos;</li>
+			<li>Dados numéricos contínuos e discretos; ⬅️</li>
 			<li>Dados de texto (categorias);</li>
 			<li>Dados em lista;</li>
 			<li>Dados em mapa;</li>
