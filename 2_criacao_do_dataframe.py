@@ -78,3 +78,5 @@ base_airbnb['extra_people'] = base_airbnb['extra_people'].str.replace(',', '')
 base_airbnb['extra_people'] = base_airbnb['extra_people'].astype(np.float32, copy=False) #propriedade da biblioteca numpy (imported as np)
 
 print(base_airbnb.dtypes)
+
+#base_airbnb.to_csv("BaseTratada.csv")
