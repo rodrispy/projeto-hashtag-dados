@@ -60,3 +60,10 @@ print(f'{linhas_removidas} linhas removidas')
 
 diagrama_caixa(base_airbnb['price'])
 histograma(base_airbnb['price'])
+
+base_airbnb, linhas_removidas = excluir_outliers(base_airbnb, 'extra_people')
+print(f'{linhas_removidas} linhas removidas')
+
+diagrama_caixa(base_airbnb['extra_people'])
+histograma(base_airbnb['extra_people'])
+
