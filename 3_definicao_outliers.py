@@ -27,7 +27,6 @@ def limites(coluna):
 
 print(limites(base_airbnb['price']))
 
-
 # Plotando um gráfico
 def diagrama_caixa(coluna):
     fig, (ax1, ax2) = plt.subplots(1, 2)
@@ -35,14 +34,12 @@ def diagrama_caixa(coluna):
     sns.boxplot(x=coluna, ax=ax1)
     ax2.set_xlim(limites(coluna))
     sns.boxplot(x=coluna, ax=ax2)
-    
-    
+        
 # Criando gráfico de histograma
 def histograma(coluna):
     plt.figure(figsize=(15,5))
     sns.distplot(coluna, hist=True)
     
-
 # Como estamos construindo um modelo para imóveis comuns, acredito que os valores acima do limite superior serão apenas de apartamentos de altíssimo luxo, que não é o nosso objetivo principal. Por isso, podemos excluir esses outliers.
 
 # Função para excluir os outliers da base de dados
@@ -55,15 +52,32 @@ def excluir_outliers(df, nome_coluna):
     
     return df, linhas_removidas
 
+# Definindo uma função para gráficos de barra
+def grafico_barra(coluna):
+    plt.figure(figsize=(15,5))
+    ax = sns.barplot(x=coluna.value_counts().index(), y=coluna.value_counts())
+    ax.set_xlim(limites(coluna))
+
+
+# Aplicando a função na coluna de "price"
 base_airbnb, linhas_removidas = excluir_outliers(base_airbnb, 'price')
 print(f'{linhas_removidas} linhas removidas')
 
 diagrama_caixa(base_airbnb['price'])
 histograma(base_airbnb['price'])
 
+# Aplicando a função na coluna de "extra_people"
 base_airbnb, linhas_removidas = excluir_outliers(base_airbnb, 'extra_people')
 print(f'{linhas_removidas} linhas removidas')
 
 diagrama_caixa(base_airbnb['extra_people'])
 histograma(base_airbnb['extra_people'])
+
+
+# Analisando as próximas colunas com a função do gráfico de barras e excluindo ou não os outliers
+grafico_barra(base_airbnb['host_listings_count'])
+
+base_airbnb, linhas_removidas = excluir_outliers(base_airbnb, 'host_listings_count')
+print(f'{linhas_removidas} linhas removidas')
+
 
