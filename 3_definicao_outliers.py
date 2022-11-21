@@ -55,7 +55,7 @@ def excluir_outliers(df, nome_coluna):
 # Definindo uma função para gráficos de barra
 def grafico_barra(coluna):
     plt.figure(figsize=(15,5))
-    ax = sns.barplot(x=coluna.value_counts().index(), y=coluna.value_counts())
+    ax = sns.barplot(x=coluna.value_counts().index, y=coluna.value_counts())
     ax.set_xlim(limites(coluna))
 
 
@@ -78,6 +78,17 @@ histograma(base_airbnb['extra_people'])
 grafico_barra(base_airbnb['host_listings_count'])
 
 base_airbnb, linhas_removidas = excluir_outliers(base_airbnb, 'host_listings_count')
-print(f'{linhas_removidas} linhas removidas')
+base_airbnb, linhas_removidas = excluir_outliers(base_airbnb, 'accommodates')
+base_airbnb, linhas_removidas = excluir_outliers(base_airbnb, 'bathrooms')
+base_airbnb, linhas_removidas = excluir_outliers(base_airbnb, 'beds')
+base_airbnb, linhas_removidas = excluir_outliers(base_airbnb, 'bedrooms')
+base_airbnb, linhas_removidas = excluir_outliers(base_airbnb, 'minimum_nights')
+
+
+# Removendo "guests_included" e "maximum_nights" da análise
+base_airbnb = base_airbnb.drop('guests_included', axis=1)
+base_airbnb = base_airbnb.drop('maximum_nights', axis=1)
+base_airbnb = base_airbnb.drop('number_of_reviews', axis=1)
+
 
 
